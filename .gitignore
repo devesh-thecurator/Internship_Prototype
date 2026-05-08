@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+.env
+*.sqlite3
+.venv/
+
+# Node
+node_modules/
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# Docker
+docker-compose.override.yml
+*.log
+
+# Local runtime data
+.dist/
+chromadb/
+media/
+backend/chromadb/
+backend/media/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+{
+  "upload_id": 1,
+  "trade_id": "TRD-2026-GBX-8901",
+  "match_percentage": 88.5,
+  "risk_score": 18.0,
+  "compliance_score": 82.0,
+  "mismatches": [
+    "Clause mismatch",
+    "Currency format issue"
+  ],
+  "anomalies": [
+    "Notional amount above threshold"
+  ],
+  "summary": "Sample validation report for enterprise term sheet review."
+}
