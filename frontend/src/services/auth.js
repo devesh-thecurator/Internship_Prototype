@@ -1,7 +1,8 @@
-import api from './api';
+import api, { clearAuthTokens, setAuthTokens } from './api';
 
 export const login = async (credentials) => {
   const response = await api.post('/auth/login/', credentials);
+  setAuthTokens(response.data);
   return response.data;
 };
 
@@ -16,6 +17,5 @@ export const fetchProfile = async () => {
 };
 
 export const logout = () => {
-  localStorage.removeItem('auth_token');
-  localStorage.removeItem('auth_refresh');
+  clearAuthTokens();
 };

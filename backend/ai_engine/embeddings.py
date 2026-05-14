@@ -1,5 +1,6 @@
 import hashlib
 import math
+import os
 
 try:
     from sentence_transformers import SentenceTransformer
@@ -12,6 +13,8 @@ EMBEDDING_MODEL = None
 
 def _get_embedding_model():
     global EMBEDDING_MODEL
+    if os.getenv('ENABLE_SENTENCE_TRANSFORMERS', 'false').lower() not in ('1', 'true', 'yes'):
+        return None
     if EMBEDDING_MODEL is None and SentenceTransformer is not None:
         try:
             EMBEDDING_MODEL = SentenceTransformer(MODEL_NAME)

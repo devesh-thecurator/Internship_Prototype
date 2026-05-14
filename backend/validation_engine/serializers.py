@@ -38,7 +38,10 @@ class ValidationReportSerializer(serializers.ModelSerializer):
         ]
 
     def get_compliance_result(self, obj):
-        compliance = getattr(obj.document, 'compliance_result', None)
+        try:
+            compliance = obj.document.compliance_result
+        except Exception:
+            compliance = None
         if not compliance:
             return None
         return {
